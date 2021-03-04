@@ -1,5 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit"
+import { configureStore } from '@reduxjs/toolkit'
+import NotesReducer from './notesReducer'
 
 export default configureStore({
-  reducer: {},
+  reducer: {
+    notesReducer: NotesReducer
+  }
 })
