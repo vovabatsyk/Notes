@@ -44,7 +44,7 @@ export const EditNoteModal = ({ note }) => {
 }
 
 const NoteModal = ({ note, handleFormSubmit, show, handleClose }) => {
-  const [modalNote, setModalNote] = useState('')
+  const [modalNote, setModalNote] = useState({})
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -66,9 +66,9 @@ const NoteModal = ({ note, handleFormSubmit, show, handleClose }) => {
           <Modal.Body>
             <InputGroup>
               <FormControl
-                value={modalNote === null ? '' : modalNote}
+                value={modalNote === null ? '' : modalNote.value}
                 onChange={(event) => {
-                  setModalNote(event.target.value)
+                  setModalNote({ ...modalNote, value: event.target.value })
                 }}
               />
             </InputGroup>
